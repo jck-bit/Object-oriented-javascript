@@ -18,7 +18,7 @@ Book.prototype.getAge = function () {
     const years = new Date().getFullYear() -this.year;
     return `${this.title} is ${years} years old`;
 
-};
+}; 
 
 //revise/ change year
 
