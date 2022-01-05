@@ -9,7 +9,13 @@ var userOne = {
     } 
 };
 
-userOne.age = 25;
 
-console.log(userOne);
 
+
+var userone = new User('ryui@gmail.com', 'ryui')
+var userTwo = new User('mario@gmail.com', 'Mario')
+
+
+
+userone.login();
+userTwo.logout();
