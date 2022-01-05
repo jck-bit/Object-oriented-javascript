@@ -1,26 +1,40 @@
-function Book(title, author,year) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
- 
-
-    Book.prototype.getsummary = function () {
-        return `${this.title} was written by ${this.author} in ${this.year}`
+class User{
+    constructor(email, name){
+        this.email = email;
+        this.name = name;
+        this.score = 0;
+    }
+    login(){
+        console.log(this.email, 'just logged in')
+        return this;
+    }
+    logout(){
+        console.log(this.email, 'just logged out')
+        return this;
+    }
+    updateScore(){
+        this.score ++;
+        console.log(this.email, 'score is now', this.score )
+        return this;
     }
 }
 
-function magazine (title, author, year, month) {
-    Book.call(this, title, author, year);
-
-    this.month = month;
+class Admin extends User{
+    deleteUser(user){
+        users = users.filter(u =>{
+            return u.email !=user.email;
+        })
+    }
 }
- 
-//inherit prototype
-magazine.prototype = Object.create(Book.prototype);
 
-//instantiate magazine 
+var userone = new User('ryui@gmail.com', 'Ryui');
+var userTwo = new User('mario@gmail.com', 'Mario');
 
-const mag1 = new magazine ('mag1', 'john doe', '2018', 'jan')
+var admin = new Admin('shaun@gmail.com', 'shaun')
 
 
-console.log(mag1.getsummary())
+var users = [userone, userTwo, admin];
+
+
+admin.deleteUser(userone);
+console.log(users)
