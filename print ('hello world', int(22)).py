@@ -1,1 +1,0 @@
-print ('hello world '+ str(22))
