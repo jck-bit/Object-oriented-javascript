@@ -23,4 +23,4 @@ var userone = new User('ryui@gmail.com', 'Ryui');
 var userTwo = new User('mario@gmail.com', 'Mario');
 
 
-userone.login().updateScore().logout(); 
+userone.login().updateScore().logout()
